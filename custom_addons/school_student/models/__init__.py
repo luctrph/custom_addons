@@ -1,1 +1,1 @@
-from . import schoolstudent
+from . import school_student
