@@ -11,10 +11,11 @@
     """,
     'depends': [],
     'data': [
-        'security/ir.model.access.csv',
         'security/security.xml',
-
+        'security/ir.model.access.csv',
         'views/student_view.xml',
+        'views/employee_view.xml',
+        'views/employee_department_view.xml',
         'views/car_view.xml',
     ],
     'application': True,

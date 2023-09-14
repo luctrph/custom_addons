@@ -4,3 +4,9 @@ access_student_sale_administrator,access_student_sale_administrator,learn_odoo.m
 
 access_student_user,access_student_user,learn_odoo.model_student,learn_odoo.student_access_user,1,1,1,0
 access_student_manager,access_student_manager,learn_odoo.model_student,learn_odoo.student_access_manager,1,1,1,1
+
+access_employee_user,access_employee_user,learn_odoo.model_employee,learn_odoo.student_access_user,1,1,1,0
+access_employee_manager,access_employee_manager,learn_odoo.model_employee,learn_odoo.student_access_manager,1,1,1,1
+
+access_employee_department_user,access_employee_department_user,learn_odoo.model_employee_department,learn_odoo.student_access_user,1,1,1,0
+access_employee_department_manager,access_employee_department_manager,learn_odoo.model_employee_department,learn_odoo.student_access_manager,1,1,1,1
