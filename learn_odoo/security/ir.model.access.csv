@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_internal_user,access_student_internal_user,learn_odoo.model_student,base.group_user,1,0,0,0
+access_student_sale_administrator,access_student_sale_administrator,learn_odoo.model_student,sales_team.group_sale_manager,1,1,1,1
+
+access_student_user,access_student_user,learn_odoo.model_student,learn_odoo.student_access_user,1,1,1,0
+access_student_manager,access_student_manager,learn_odoo.model_student,learn_odoo.student_access_manager,1,1,1,1

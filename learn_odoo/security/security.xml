@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="student_access_group_category" model="ir.module.category">
+            <field name="name">Student</field>
+            <field name="sequence">9</field>
+        </record>
+
+        <record id="student_access_user" model="res.groups">
+            <field name="name">Student Users</field>
+            <field name="category_id" ref="learn_odoo.student_access_group_category"/>
+        </record>
+
+        <record id="student_access_manager" model="res.groups">
+            <field name="name">Student Manager</field>
+            <field name="implied_ids" eval="[(4, ref('learn_odoo.student_access_user'))]"/>
+            <field name="category_id" ref="learn_odoo.student_access_group_category"/>
+        </record>
+
+        <record id="access_student_user_rule" model="ir.rule">
+            <field name="name">Access Student User Rule</field>
+            <field ref="learn_odoo.model_student" name="model_id"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('learn_odoo.student_access_user'))]"/>
+        </record>
+
+        <record id="access_student_manager_rule" model="ir.rule">
+            <field name="name">Access Student Manager Rule</field>
+            <field ref="learn_odoo.model_student" name="model_id"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="groups" eval="[(4, ref('learn_odoo.student_access_manager'))]"/>
+        </record>
+    </data>
+</odoo>
