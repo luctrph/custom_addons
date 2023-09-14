@@ -14,7 +14,7 @@ class SchoolProfile(models.Model):
     def default_get_date(self):
         return fields.Date.today()
 
-    name = fields.Char(string="School Name", unique=True)
+    name = fields.Char(string="School Name", required=True)
     email = fields.Char(string="Email")
     phone = fields.Char("Phone")
     is_visible = fields.Boolean(string="Is Visible?")
