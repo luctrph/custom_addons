@@ -9,3 +9,5 @@ class school_student(models.Model):
 
     name = fields.Char()
     school_id = fields.Many2one('school.profile',string="School Name",required=True)
+
+

@@ -46,6 +46,11 @@
                         <field name="school_image" widget="image" />
                         <field name="school_description"/>
                     </group>
+                    <notebook>
+                        <page>
+                            <field name="school_list"/>
+                        </page>
+                    </notebook>
                 </sheel>
             </form>
         </field>

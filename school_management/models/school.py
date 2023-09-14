@@ -28,3 +28,8 @@ class SchoolProfile(models.Model):
     file_name = fields.Char(string="file_name")
     school_image = fields.Image(string="School Image", max_width=100, max_height=100, verify_resolution=False)
     school_description = fields.Html(string="Description")
+    school_list = fields.One2many(
+        comodel_name='school.student',
+        inverse_name='school_id',
+        string='Student'
+    )
