@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="school_form_view" model="ir.ui.view">
+            <field name="name">School</field>
+            <field name="model">school</field>
+            <field name="arch" type="xml">
+                <form string="School">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                            </group>
+                            <group>
+                                <field name="id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Student">
+                                <field name="student_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="address"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="school_tree_view" model="ir.ui.view">
+            <field name="name">School</field>
+            <field name="model">school</field>
+            <field name="arch" type="xml">
+                <tree string="school">
+                    <field name="create_date"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        <record id="school_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">school_manager.school.search</field>-->
+        <!--            <field name="model">school_manager.school</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="ModelTitle">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+        <!--                                context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="school_act_window" model="ir.actions.act_window">
+            <field name="name">School</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">school</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="School Manager" id="school_manu_root_id"/>
+        <menuitem name="School" id="school_group_id" parent="school_manu_root_id"/>
+        <menuitem name="School" id="school_menu_id" parent="school_group_id" action="school_act_window"/>
+
+    </data>
+</odoo>
