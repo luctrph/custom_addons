@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="subject_form_view" model="ir.ui.view">
+            <field name="name">Subject.from.view</field>
+            <field name="model">m.subject</field>
+            <field name="arch" type="xml">
+                <form string="Subject">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="point"/>
+                            </group>
+                            <group>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="subject_tree_view" model="ir.ui.view">
+            <field name="name">subject.tree</field>
+            <field name="model">m.subject</field>
+            <field name="arch" type="xml">
+                <tree string="names">
+                    <field name="name"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="subject_search_view" model="ir.ui.view">-->
+<!--            <field name="name">.subject.search</field>-->
+<!--            <field name="model">.subject</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="ModelTitle">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="subject_act_window" model="ir.actions.act_window">
+            <field name="name">Subject</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">m.subject</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Subject" id="subject_menu" parent="school_manu_root_id" action="subject_act_window"/>
+
+    </data>
+</odoo>
