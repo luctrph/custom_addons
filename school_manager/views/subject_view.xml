@@ -37,12 +37,6 @@
                     <field name="name"/>
                     <field name="note"/>
                     <field name="student_id"/>
-            <field name="name">subject.tree</field>
-            <field name="model">m.subject</field>
-            <field name="arch" type="xml">
-                <tree string="names">
-                    <field name="name"/>
-                    <field name="note"/>
                 </tree>
             </field>
         </record>

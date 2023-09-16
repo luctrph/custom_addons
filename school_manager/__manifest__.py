@@ -13,7 +13,6 @@
     'data': ['views/school_view.xml',
              'views/student_view.xml',
              'views/subject_view.xml',
-             'views/subject.xml',
              ],
     'demo': [],
     'installable': True,
