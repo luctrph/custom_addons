@@ -1,0 +1,94 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="school_student.list">
+            <field name="name">school_student list</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="school_profile_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="school_student.form">
+            <field name="name">school_student form</field>
+            <field name="model">school.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="point"/>
+                            <field name="address"/>
+                            <field name="birthday"/>
+                        </group>
+                        <group>
+                            <field name="school_profile_id" string="School"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="school_extend_form">
+            <field name="name">school_extent_form</field>
+            <field name="model">school.profile</field>
+            <field name="inherit_id" ref="school_management.school_form_view"/>
+            <field name="arch" type="xml">
+                <field name="school_description" position="after">
+                    <field name="school_student_ids" string="Students" nolabel="1">
+                        <tree editable="button">
+                            <field name="name" required="1"/>
+                            <field name="birthday"/>
+                            <field name="address" readonly="1   "/>
+                            <field name="point"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="school_student.action_window">
+            <field name="name">school_student window</field>
+            <field name="res_model">school.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+
+        <record model="ir.actions.server" id="school_student.action_server">
+            <field name="name">school_student server</field>
+            <field name="model_id" ref="model_school_student"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="school_student" id="school_student.menu_root"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Menu 1" id="school_student.menu_1" parent="school_student.menu_root"/>
+        <menuitem name="Menu 2" id="school_student.menu_2" parent="school_student.menu_root"/>
+
+        <!-- actions -->
+
+        <menuitem name="List" id="school_student.menu_1_list" parent="school_student.menu_1"
+                  action="school_student.action_window"/>
+        <menuitem name="Server to list" id="school_student" parent="school_student.menu_2"
+                  action="school_student.action_server"/>
+
+    </data>
+</odoo>

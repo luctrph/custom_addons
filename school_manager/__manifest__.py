@@ -12,6 +12,7 @@
     'depends': ['base'],
     'data': ['views/school_view.xml',
              'views/student_view.xml',
+             'views/subject_view.xml',
              ],
     'demo': [],
     'installable': True,

@@ -21,8 +21,18 @@
                             <group>
                                 <field name="address"/>
                                 <field name="school_id"/>
-
                             </group>
+                            <notebook>
+                                <page string="Subjects">
+                                    <field name="subject_ids">
+                                        <tree>
+                                            <field name="name" string="Name of Subject"/>
+                                            <field name="point"/>
+                                            <field name="note"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
                         </group>
                     </sheet>
                 </form>
