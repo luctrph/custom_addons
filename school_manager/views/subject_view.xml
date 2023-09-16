@@ -4,6 +4,7 @@
 
         <record id="subject_form_view" model="ir.ui.view">
             <field name="name">subject.subject.form</field>
+            <field name="name">Subject.from.view</field>
             <field name="model">m.subject</field>
             <field name="arch" type="xml">
                 <form string="Subject">
@@ -36,6 +37,12 @@
                     <field name="name"/>
                     <field name="note"/>
                     <field name="student_id"/>
+            <field name="name">subject.tree</field>
+            <field name="model">m.subject</field>
+            <field name="arch" type="xml">
+                <tree string="names">
+                    <field name="name"/>
+                    <field name="note"/>
                 </tree>
             </field>
         </record>
@@ -48,6 +55,13 @@
 <!--                    <group expand="1" string="Group By">-->
 <!--                        <filter string="name" name="example_field" domain="[]"-->
 <!--                                context="{'group_by':'name'}"/>-->
+<!--            <field name="name">.subject.search</field>-->
+<!--            <field name="model">.subject</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="ModelTitle">-->
+<!--                    <group expand="1" string="Group By">-->
+<!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+<!--                                context="{'group_by':'example_field'}"/>-->
 <!--                    </group>-->
 <!--                </search>-->
 <!--            </field>-->
