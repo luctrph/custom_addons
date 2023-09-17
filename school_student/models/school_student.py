@@ -18,3 +18,10 @@ class SchoolProfile(models.Model):
 
     school_student_ids = fields.One2many(string='Students', comodel_name='school.student',
                                         inverse_name='school_profile_id')
+
+
+
+class Hobbies(models.Model):
+    _name = "hobby"
+    _description = "hobby of student"
+    name = fields.Char("Hobby")

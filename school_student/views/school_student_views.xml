@@ -32,6 +32,15 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="hobby_list">
+            <field name="name">Hobby</field>
+            <field name="model">hobby</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
         <record model="ir.ui.view" id="school_extend_form">
             <field name="name">school_extent_form</field>
             <field name="model">school.profile</field>
@@ -49,7 +58,10 @@
                 </field>
             </field>
         </record>
+
+
         <!-- actions opening views on models -->
+
 
         <record model="ir.actions.act_window" id="school_student.action_window">
             <field name="name">school_student window</field>
@@ -57,21 +69,25 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-
+        <record model="ir.actions.act_window" id="hobby.window_action">
+            <field name="name">Hobby</field>
+            <field name="res_model">hobby</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <!-- server action to the one above -->
 
-        <record model="ir.actions.server" id="school_student.action_server">
-            <field name="name">school_student server</field>
-            <field name="model_id" ref="model_school_student"/>
-            <field name="state">code</field>
-            <field name="code">
-                action = {
-                "type": "ir.actions.act_window",
-                "view_mode": "tree,form",
-                "res_model": model._name,
-                }
-            </field>
-        </record>
+<!--        <record model="ir.actions.server" id="school_student.action_server">-->
+<!--            <field name="name">school_student server</field>-->
+<!--            <field name="model_id" ref="model_school_student"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                action = {-->
+<!--                "type": "ir.actions.act_window",-->
+<!--                "view_mode": "tree,form",-->
+<!--                "res_model": model._name,-->
+<!--                }-->
+<!--            </field>-->
+<!--        </record>-->
 
 
         <!-- Top menu item -->
@@ -87,8 +103,8 @@
 
         <menuitem name="List" id="school_student.menu_1_list" parent="school_student.menu_1"
                   action="school_student.action_window"/>
-        <menuitem name="Server to list" id="school_student" parent="school_student.menu_2"
-                  action="school_student.action_server"/>
+        <menuitem name="Bobby" id="menu_school_student_hobby" parent="school_student.menu_2"
+                  action="hobby.window_action"/>
 
     </data>
 </odoo>
