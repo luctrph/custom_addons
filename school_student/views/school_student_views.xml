@@ -30,6 +30,10 @@
                             <field name="school_profile_id" string="School"/>
                             <field name="hoddy_list" widget="many2many_checkboxes" nolabel="1" string="Hoddies"/>
                         </group>
+                        <group string="School">
+                            <field name="school_type"/>
+                            <field name="school_visiable"/>
+                        </group>
                     </group>
                 </form>
             </field>

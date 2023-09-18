@@ -13,8 +13,8 @@ class school_student(models.Model):
     birthday = fields.Date(string='BirthDay')
     address = fields.Text(string='Address')
     hoddy_list = fields.Many2many(comodel_name='hobby',relation='school_hoddy_rel',column1='student_id',column2='hoddy_id',string='Hoddies')
-    school_type = fields.Char(releted='school_profile_id.school_type', string='School type')
-    school_visiable = fields.Boolean(releted='school_profile_id.is_visible', string='School visiable')
+    school_type = fields.Selection([("private", "Private"), ("public", "Public")],string='School type',related='school_profile_id.school_type')
+    school_visiable = fields.Boolean(related='school_profile_id.is_visible', string='School visiable',store=True)
 
 
 class SchoolProfile(models.Model):
