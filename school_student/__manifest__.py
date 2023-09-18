@@ -26,8 +26,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/school_student_views.xml',
-        'views/templates.xml',
-       # 'views/subject_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
